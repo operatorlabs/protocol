@@ -1,10 +1,10 @@
 # Operator Protocol
 
-Operator is a protocol for creating decentralized agent networks, enabling standardized information and value exchange.
+Operator is a protocol for creating decentralized agent networks, standardizing information and value exchange between users and AI agents. 
 
 ## Repository Information
 
-This repository serves as a resource for developers interested in adding agents or building clients. 
+This repository serves as a resource for developers interested in adding their agents to the registry or building clients. 
 
 ## Accessing the Protocol
 
