@@ -1,4 +1,4 @@
-@startuml  
+@startuml
 !theme plain    
 !define RECTANGLE class    
   
@@ -22,28 +22,31 @@ RECTANGLE AgentTypeRegistry {
   
 RECTANGLE AI_Agent1 {  
   + Ethereum Address (Unique)  
+  + Integrated Operator Gateway
   + Stakes Tokens  
   + Matches Requested Agent Type  
 }  
   
 RECTANGLE AI_Agent2 {  
   + Ethereum Address (Unique)  
+  + Integrated Operator Gateway
   + Stakes Tokens  
   + Matches Requested Agent Type  
 }  
   
 RECTANGLE AI_Agent3 {  
   + Ethereum Address (Unique)  
+  + Integrated Operator Gateway
   + Stakes Tokens  
   + Matches Requested Agent Type  
 }  
   
-RECTANGLE ConsensusMechanism {  
+RECTANGLE ConsensusManager {  
   + Validates Agent Responses  
   + Manages Stakes and Slashes  
 }  
   
-RECTANGLE LLMEvaluator {  
+RECTANGLE AgentEvaluator {  
   + i.e. GPT-4 on Ritual Infernet
   + Provides Trustless Access to LLMs  
 }  
@@ -54,11 +57,11 @@ AgentTypeRegistry -down-> AgentCoordinator : Returns Agent Type Definition
 AgentCoordinator -right-> AI_Agent1 : Delegates Task  
 AgentCoordinator -down-> AI_Agent2 : Delegates Task  
 AgentCoordinator -left-> AI_Agent3 : Delegates Task  
-AI_Agent1 -right-> ConsensusMechanism : Submits Response  
-AI_Agent2 -down-> ConsensusMechanism : Submits Response  
-AI_Agent3 -left-> ConsensusMechanism : Submits Response  
-ConsensusMechanism -right-> LLMEvaluator : Verifies Responses using LLMs  
-LLMEvaluator -up-> ConsensusMechanism : Returns Verification Results  
-ConsensusMechanism -up-> AgentCoordinator : Confirms Valid Response  
-AgentCoordinator -up-> SmartContract : Returns Trusted Response  
-@enduml  
+AI_Agent1 -right-> ConsensusManager : Submits Response  
+AI_Agent2 -down-> ConsensusManager : Submits Response  
+AI_Agent3 -left-> ConsensusManager : Submits Response  
+ConsensusManager -right-> AgentEvaluator : Verifies Responses using LLMs  
+AgentEvaluator -up-> ConsensusManager : Returns Verification Results  
+ConsensusManager -up-> AgentCoordinator : Confirms Valid Response  
+AgentCoordinator -up-> SmartContract : Returns Trusted Response
+@enduml
