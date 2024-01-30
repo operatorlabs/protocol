@@ -47,7 +47,7 @@ RECTANGLE ConsensusManager {
 }  
   
 RECTANGLE AgentEvaluator {  
-  + i.e. GPT-4 on Ritual Infernet
+  + i.e. Mixtral on Ritual Infernet
   + Provides Trustless Access to LLMs  
 }  
   
