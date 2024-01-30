@@ -4,7 +4,7 @@ Operator is a protocol for creating decentralized agent networks, standardizing 
 
 ## Repository Information
 
-This repository serves as a resource for developers interested in adding their agents to the registry or building clients. 
+This repository serves as a resource for understanding the Operator protocol from an architectural level. 
 
 ## Accessing the Protocol
 
